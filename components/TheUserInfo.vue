@@ -16,9 +16,11 @@
                         <li><router-link to="/maotao/timeline/new">新建时光轴</router-link></li>
                     </template>
                     <li class="divider"></li>
-                    <li><a @click.prevent="logout">
-                        <span>登出</span>
-                    </a></li>
+                    <li>
+                        <button class="btn-link btn btn-default" @click.prevent="logout">
+                            <span>登出</span>
+                        </button>
+                    </li>
                 </ul>
             </li>
         </template>

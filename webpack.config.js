@@ -27,7 +27,7 @@ const cssLoader = [
 ];
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
         
     // 唯一入口文件
     entry:  path.resolve(__dirname, "main.js"),
@@ -107,7 +107,7 @@ module.exports = {
 
     plugins: [
         new VueLoaderPlugin()
-        // new ExtractTextPlugin("css/styles.css"),
+        //new ExtractTextPlugin("css/styles.css"),
     ]
 }
 
@@ -117,12 +117,12 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
-            NODE_ENV: '"production"'
+                NODE_ENV: '"production"'
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-            warnings: false
+                warnings: false
             }
         }),
         new webpack.optimize.OccurrenceOrderPlugin()

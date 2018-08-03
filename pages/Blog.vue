@@ -4,7 +4,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <blockquote class="text-center">
-                        <h3 class="panel-title">
+                        <h3>
                             {{ blog.name }}
                         </h3>
                         <small>{{ blog.user_name }}发表于{{ blog.created_at | datetime }}</small>
@@ -25,6 +25,7 @@
                                 class="btn btn-default btn-lg" 
                                 @click.prevent="like" 
                                 title="赞"
+                                style="border: 0px;" 
                                 >
                                 <span 
                                     :class="{
@@ -198,3 +199,24 @@
         }
     }
 </script>
+
+<style scoped>
+    .glyphicon {
+        animation: twinkle 2s infinite;
+            -webkit-animation: twinkle 2s infinite;
+    }
+    @keyframes twinkle {
+        0%{
+            transform: scale(0.8,0.8);
+            opacity: 1;
+        }
+        30%{
+            transform: scale(1,1);
+            opacity: 0.8;
+        }
+        100%{
+            transform: scale(0.8,0.8);
+            opacity: 1;
+        }
+    }
+</style>

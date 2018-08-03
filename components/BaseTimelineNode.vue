@@ -29,17 +29,17 @@
                     <li class="pull-right">
                         <button 
                             type="button" 
-                            class="btn btn-default btn-link" 
+                            class="btn btn-default" 
                             @click.prevent="like" 
                             title="赞"
-                            style="background-color: white;" 
+                            style="border: 0px;background-color: #f5f5f5;" 
                             >
-                            <span 
+                            <div 
                                 class="glyphicon glyphicon-heart"
                                 style="color: red;"
-                            >
-                                {{ todo.good }}
-                            </span>
+                            >                                
+                            </div>
+                            <span style="color: gray">{{ todo.good }}</span>
                         </button>
                     </li>
                 </ul>
@@ -119,5 +119,23 @@
         display: block;
         word-break: break-all; 
         word-wrap:break-word;
+    }
+    .glyphicon-heart {
+        animation: twinkle 2s infinite;
+            -webkit-animation: twinkle 2s infinite;
+    }
+    @keyframes twinkle {
+        0%{
+            transform: scale(0.8,0.8);
+            opacity: 1;
+        }
+        30%{
+            transform: scale(1,1);
+            opacity: 0.8;
+        }
+        100%{
+            transform: scale(0.8,0.8);
+            opacity: 1;
+        }
     }
 </style>

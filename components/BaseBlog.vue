@@ -4,8 +4,8 @@
 <template>
     <article :id="blog.id" class="blog">
         <div class="row">
-            <button type="button" class="close" aria-hidden="true" @click.prevent="del" v-if="isAdmin">
-                &times;
+            <button type="button" class="btn-sm btn-link pull-right" aria-hidden="true" @click.prevent="del" v-if="isAdmin" style="padding-right: 20px;">
+                删除
             </button>
         </div>
         <div class="panel panel-default">
