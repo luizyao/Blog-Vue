@@ -9,6 +9,7 @@ export default new vuex.Store({
         // 导航栏上所有的菜单，添加id只是为了方便vue对元素进行渲染
         navMenus: [
             {id: 1, href: "/blogs", content: "博客"},
+            {id: 1, href: "/books", content: "读书"},
             {id: 2, href: "/maotao/timeline", content: "毛桃的时光轴"},
             {id: 3, href: "/about", content: "关于"}
         ],

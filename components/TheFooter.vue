@@ -27,12 +27,6 @@
         display: block;
         height: 60px;
     }
-    footer .links {
-        font-size: 12px;
-    }    
-    footer .links a {
-        color: white;
-    }
     li {
         padding-right: 20px;
     }

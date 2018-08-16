@@ -149,13 +149,6 @@ Vue.use(VueAxios, axios);
 // ************************************************路由配置************************************************
 // 使用路由
 Vue.use(VueRouter)
-
-// 路由页面，懒加载模式
-// import Blog from './pages/Blog'
-// import Blogs from './pages/Blogs'
-// import Login from './pages/Login'
-// import TimeLine from './pages/TimeLine'
-// import About from './pages/About'
 const Blog = () => import('./pages/Blog');
 const Blogs = () => import('./pages/Blogs');
 const NewBlog = () => import('./pages/NewBlog');
@@ -163,14 +156,20 @@ const NewTimeLine = () => import('./pages/NewTimeLine');
 const Login = () => import('./pages/Login');
 const TimeLine = () => import('./pages/TimeLine');
 const About = () => import('./pages/About');
+const Books = () => import('./pages/Books');
 const Register = () => import('./pages/Register');
 
 // 定义路由
 const routes = [
     { 
         path: '/', 
-        redirect: '/blogs'
+        redirect: '/maotao/timeline'
     },
+    { 
+        path: '/books',
+        component: Books, 
+        name: "读书"
+    }, 
     {
         // 此路由一定要在'/blog/:id'路由上面，不然不会进入到这个路由里面
         path: '/blog/new',
@@ -286,6 +285,10 @@ router.beforeEach((to, from, next) => {
         {
             key: 'page',
             value: 1
+        },
+        {
+            key: 'tag',
+            value: ''
         },
         {
             key: 'data',

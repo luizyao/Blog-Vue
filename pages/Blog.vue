@@ -110,7 +110,7 @@
                         _this.good = true;
                     })
                     .catch(function (error) {                        
-                        alert("谢谢，一个IP只能点一次赞哦。");
+                        alert("谢谢，你已经点过赞了(●'◡'●)。");
                     })
             },
             // 添加评论

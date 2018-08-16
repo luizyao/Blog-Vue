@@ -30,7 +30,9 @@ module.exports = {
     mode: 'production',
         
     // 唯一入口文件
-    entry:  path.resolve(__dirname, "main.js"),
+    // [vuex] vuex requires a Promise polyfill in this browser.
+    // 有些浏览器不支持ES6的语法
+    entry:  ["babel-polyfill", path.resolve(__dirname, "main.js")],
     // 打包后的文件存放的地方
     output: {
         path: path.resolve(__dirname, "www", "static"),

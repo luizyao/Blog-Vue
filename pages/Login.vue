@@ -1,13 +1,19 @@
 <template>
     <div class="container">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">请登录</h2>
-        <label for="inputEmail" class="sr-only">邮箱</label>
-        <input type="email" id="inputEmail" class="form-control" v-model="email" placeholder="邮箱" required autofocus>
-        <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="inputPassword" class="form-control" v-model="passwd" placeholder="密码" required>
-        <button class="btn btn-lg btn-primary btn-block" @click.prevent="login">登陆</button>
-    </form>
+        <form class="form-signin form-horizontal">
+            <h2 class="form-signin-heading">请登录</h2>
+            <div class="form-group">
+                <label for="inputEmail" class="sr-only">邮箱</label>
+                <input type="email" id="inputEmail" class="form-control" v-model="email" placeholder="邮箱" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="sr-only">密码</label>
+                <input type="password" id="inputPassword" class="form-control" v-model="passwd" placeholder="密码" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" @click.prevent="login">登陆</button>
+            </div>
+        </form>
     </div> <!-- /container -->
 </template>
 
