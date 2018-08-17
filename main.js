@@ -45,7 +45,6 @@ Vue.prototype.markedContent = function (content) {
     // 返回markdown格式的内容
     return marked(content, { sanitize: true });
 }
-
 // ************************************************过滤器配置************************************************
 Vue.filter('datetime', function (value) {
     // 将数据库中的时间转化为更友好的时间显示
@@ -293,6 +292,10 @@ router.beforeEach((to, from, next) => {
         {
             key: 'data',
             value: []
+        },
+        {
+            key: 'count',
+            value: 0
         }
     ]);
     // 进入路由

@@ -62,7 +62,8 @@ module.exports = {
         'axios': 'axios',
         'vuex': 'Vuex',
         'marked': 'marked',
-        'Hljs': 'highlight'
+        'Hljs': 'highlight',
+        '_': 'lodash'
     },
 
     // 模块加载器
