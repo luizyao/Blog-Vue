@@ -5,33 +5,35 @@
             <form role="form">
                 <div class="form-group">
                     <label for="name">你想和宝宝说些什么？</label>
-                    <textarea class="form-control" rows="3" v-model="timeline.say" @keydown="inputTab"></textarea>
+                    <textarea class="form-control" rows="6" v-model.trim="timeline.say" @keydown="inputTab"></textarea>
                 </div>
                 <div class="form-group">  
                     <!--只支持选择一张图片-->                
                     <label for="inputfile">照片视频什么的快来show一下吧！</label>
                     <input type="file" id="inputfile" ref="file" @change="getFile">
                 </div>
-                <div class="form-group">
-                    <!--等到之前的图片视频上传完毕之后，注掉时间选择控件，以当时上传的时间为准-->
+                <!--注掉时间选择控件，以当时上传的时间为准-->
+                <!--
+                <div class="form-group">                    
                     <label for="datetimepicker">还记得是哪一天吗？</label>
                     <div id="datetimepicker">
                         <date-picker :date="nowTime" :option="option" :limit="limit" @change="transferTime"></date-picker>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default" @click.prevent="save">快保存下来吧！</button>
+                -->
+                <button type="submit" class="btn btn-primary" @click.prevent="save">快保存下来吧！</button>
             </form>
         </template>
     </the-main-body>
 </template>
 
 <script>
-    import myDatepicker from 'vue-datepicker'
+    //import myDatepicker from 'vue-datepicker'
     import TheMainBody from '../components/TheMainBody'
 
     export default {
         components: {
-            'date-picker': myDatepicker,
+            //'date-picker': myDatepicker,
             'the-main-body': TheMainBody
         },
         data: function() {
@@ -43,6 +45,8 @@
                     fileName: "",
                     ftype: ""
                 },
+
+                /**
                 // 配置时间控件
                 // https://www.npmjs.com/package/vue-datepicker
                 nowTime: {
@@ -95,14 +99,17 @@
                         }
                     }
                 ]
+                **/
             }
         },
         methods: {
+            /**
             // 返回从 1970 年 1 月 1 日至今的秒数
             transferTime () {
                 var time = new Date(this.nowTime.time.replace(/-/g, "/"));
                 this.timeline.created_at = time.getTime() / 1000;
             },
+            **/
             getFile (event) {
                 // 获取上传的文件
                 let _this = this;

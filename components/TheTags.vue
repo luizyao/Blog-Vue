@@ -10,7 +10,7 @@
             <div class="panel-body">
                 <ul class="list-inline">
                     <li v-for="tag in tags">
-                        <h4><base-tag :tag="tag" @changeTag="$emit('refresh')"></base-tag></h4>
+                        <h5><base-tag :tag="tag" @changeTag="$emit('refresh')"></base-tag></h5>
                     </li>
                 </ul>
             </div>

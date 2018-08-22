@@ -45,6 +45,7 @@ Vue.prototype.markedContent = function (content) {
     // 返回markdown格式的内容
     return marked(content, { sanitize: true });
 }
+
 // ************************************************过滤器配置************************************************
 Vue.filter('datetime', function (value) {
     // 将数据库中的时间转化为更友好的时间显示
@@ -167,7 +168,19 @@ const routes = [
     { 
         path: '/books',
         component: Books, 
-        name: "读书"
+        name: "读书",
+        beforeEnter: (to, from, next) => {
+            // tag只在这个页面和其子页面流通
+            if (from.path.startsWith("/book") == false) {
+                store.commit('set', [
+                    {
+                        key: 'tag',
+                        value: ''
+                    }
+                ]);
+            }            
+            next()
+        }
     }, 
     {
         // 此路由一定要在'/blog/:id'路由上面，不然不会进入到这个路由里面
@@ -187,7 +200,19 @@ const routes = [
     { 
         path: '/blogs',
         component: Blogs, 
-        name: "博客"
+        name: "博客",
+        beforeEnter: (to, from, next) => {
+            // tag只在这个页面和其子页面流通
+            if (from.path.startsWith("/blog") == false) {
+                store.commit('set', [
+                    {
+                        key: 'tag',
+                        value: ''
+                    }
+                ]);
+            }            
+            next()
+        }
     },          
     { 
         path: '/login', 
@@ -286,12 +311,12 @@ router.beforeEach((to, from, next) => {
             value: 1
         },
         {
-            key: 'tag',
-            value: ''
-        },
-        {
             key: 'data',
             value: []
+        },
+        {
+            key: 'currData',
+            value: new Object()
         },
         {
             key: 'count',

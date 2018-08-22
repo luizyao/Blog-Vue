@@ -1,10 +1,10 @@
 import Vue from 'vue/dist/vue.min.js'
-import vuex from 'vuex'
+import Vuex from 'vuex'
 
 // 使用vuex
-Vue.use(vuex);
+Vue.use(Vuex);
 
-export default new vuex.Store({
+export default new Vuex.Store({
     state: {
         // 导航栏上所有的菜单，添加id只是为了方便vue对元素进行渲染
         navMenus: [
@@ -15,6 +15,8 @@ export default new vuex.Store({
         ],
         // 存放当前路由的所有数据
         data: [],
+        // 当前的数据
+        currData: new Object(),
         // 当前页面的页码，如果为0，表示没有更多的数据了
         page: 1,
         // 当前页面一次显示的数据最大个数

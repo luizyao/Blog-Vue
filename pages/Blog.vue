@@ -85,12 +85,15 @@
         },
         data: function () {
             return {
-                // 博客
-                blog: new Object,
                 // 所有评论
-                comments: new Object,
+                comments: new Object(),
                 // 点赞
                 good: false
+            }
+        },
+        computed: {
+            blog () {
+                return this.$store.state.currData; 
             }
         },
         methods: {
@@ -170,7 +173,12 @@
                     }
                 })
                 .then(function (response) {
-                    _this.blog = response.data.results[0];
+                    _this.$store.commit('set', [
+                        {
+                            key: 'currData',
+                            value: response.data.results[0]
+                        }
+                    ])                             
                     _this.$http.post('/api/manage/feedback/add', {
                                 new: {
                                     blog_id: _this.blog.id,

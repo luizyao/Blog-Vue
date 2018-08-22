@@ -25,11 +25,14 @@
             </li>
         </template>
         <template v-else>
+            <!--不再提供注册功能-->
+            <!--
             <li role="presentation">   
                 <router-link to="/register">
                     注册
                 </router-link>
             </li>
+            -->
             <li role="presentation">   
                 <router-link to="/login">
                     登录

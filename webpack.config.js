@@ -37,7 +37,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "www", "static"),
         // 打包后输出文件的文件名 
-        filename: "js/bundle.js",
+        filename: 'js/bundle.js',
         publicPath: "/static/"      
     },
 
@@ -62,8 +62,7 @@ module.exports = {
         'axios': 'axios',
         'vuex': 'Vuex',
         'marked': 'marked',
-        'Hljs': 'highlight',
-        '_': 'lodash'
+        'lodash': '_'
     },
 
     // 模块加载器

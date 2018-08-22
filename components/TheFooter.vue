@@ -5,7 +5,7 @@
                 <div class="col-md-12">
                     <ul class="list-inline links">
                         <li>
-                            <span class="message">凡是过往，皆为序曲。</span>
+                            <span class="message">凡所过往，皆为序曲。</span>
                         </li>
                     </ul>
                 </div>

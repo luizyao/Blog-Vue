@@ -19,9 +19,10 @@
                 <div class="col-sm-1 col-md-1">
                 </div>
                 <div class="col-sm-5 col-md-5">
-                    <p style="text-indent: 2em;">
-                        {{ todo.say }}
-                    </p>
+                    <template v-for="say in todo.say.split(/\s+/)">
+                        <p style="text-indent: 2em;" v-html="emojiShow(say)">
+                        </p> 
+                    </template>                    
                 </div>                
             </div>
             <div class="panel-footer">
@@ -49,7 +50,8 @@
 </template>
 
 <script>
-    import BasePlayer from './BasePlayer'
+    import BasePlayer from './BasePlayer'   
+    import { EmojiConvertor } from 'emoji-js/lib/emoji.min.js' 
 
     export default {
         components: {
@@ -72,6 +74,18 @@
             }
         }, 
         methods: {
+            emojiShow (input) {
+                // 支持显示Apple Emoji，支持Chrome和FireFox浏览器；
+                // https://github.com/iamcal/js-emoji
+                var emoji = new EmojiConvertor();
+
+                emoji.img_sets.apple.path = '/static/image/emoji-apple-64/';
+
+                emoji.text_mode = false;
+
+                emoji.init_env();
+                return emoji.replace_colons(input);
+            },
             // 点赞
             like () {
                 let _this = this;

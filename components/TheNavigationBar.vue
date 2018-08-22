@@ -55,12 +55,18 @@
         height: 28px;
         width: 150px;
     }
-    .navbar-default {
-        background-color:#fff;
-        border-color:#d3e0e9
-    }
     .navbar-default .navbar-nav > li > a {
         font-size: 16px;
         padding: 16px 20px 5px !important;
-    }
+        outline: none;
+    } 
+    .navbar-default .navbar-nav > li > a:active {
+        star:expression(this.onFocus=this.blur());
+    }   
+    .navbar-default .navbar-nav > li > a:hover {
+        font-weight: bold;
+    }       
+    :focus {
+        outline:0;
+    } 
 </style>
