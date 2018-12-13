@@ -15,4 +15,6 @@
 - [欢迎访问](https://www.luizyao.com)
 
 - 后续计划
-  - [ ] 发现微信小程序的框架很像Vue，想实现一个微信小程序。
+  - [x] 发现微信小程序的框架很像Vue，想实现一个微信小程序。
+  
+       ![小毛桃的自留地](/static/image/miniprogram.jpg)
